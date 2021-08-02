@@ -8,8 +8,8 @@ const fs = require('fs');
 const Logger = require('./logger');
 const writeFileAsync = util.promisify(fs.writeFile);
 
-const OUTPUT_DIR = path.resolve(__dirname, 'output');
-const outputPath = path.join(OUTPUT_DIR, 'team.html');
+const OUTPUT_DIR = path.resolve(__dirname, 'dist');
+const outputPath = path.join(OUTPUT_DIR, 'teamProfile.html');
 
 const render = require('./lib/htmlRenderer');
 
