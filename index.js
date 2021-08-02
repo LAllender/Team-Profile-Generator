@@ -11,7 +11,7 @@ const writeFileAsync = util.promisify(fs.writeFile);
 const OUTPUT_DIR = path.resolve(__dirname, 'dist');
 const outputPath = path.join(OUTPUT_DIR, 'teamProfile.html');
 
-const render = require('./lib/htmlRenderer');
+const render = require('./lib/renderHTML');
 
 const log = new Logger();
 
@@ -99,7 +99,7 @@ const engineerQuestions = [
 	{
 		type: 'input',
 		message: "What is this Engineer's name?",
-		name: 'enginnerName',
+		name: 'engineerName',
 	},
 	{
 		type: 'input',
@@ -232,7 +232,7 @@ function teamMemberLoop() {
 		if (teamrole.teamMemberRoleType === 'Engineer') {
 			log.blue('Please Submit Engineer Profile Information');
 			inquirer.prompt(engineerQuestions).then((engineerBuild) => {
-				let engineer = new Engineer(engineerBuild.enginnerName, engineerBuild.engineerId, engineerBuild.engineerEmail, engineerBuild.engineerGithub);
+				let engineer = new Engineer(engineerBuild.engineerName, engineerBuild.engineerId, engineerBuild.engineerEmail, engineerBuild.engineerGithub);
 				teamMembersArray.push(engineer);
 				teamSizeInfo();
 			});
