@@ -1,6 +1,6 @@
-const Manager = require('./lib/Manager');
-const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Intern');
+const Manager = require('./lib/ManagerClass');
+const Engineer = require('./lib/EngineerClass');
+const Intern = require('./lib/InternClass');
 const inquirer = require('inquirer');
 const path = require('path');
 const util = require('util');
@@ -15,7 +15,7 @@ const render = require('./lib/htmlRenderer');
 
 const log = new Logger();
 
-//* Blank array to be filled in with pushed constructors classes.
+//* Initial empty array for constructor classes.
 const teamMembersArray = [];
 
 //* Introduction Question to open the applicaiton
